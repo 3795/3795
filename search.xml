@@ -31,6 +31,33 @@
     
     
     <entry>
+      <title>Eureka属性配置中文说明</title>
+      <link href="/2020/05/14/Eureka%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/"/>
+      <url>/2020/05/14/Eureka%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<h4 id="eureka-instance"><a href="#eureka-instance" class="headerlink" title="eureka.instance"></a>eureka.instance</h4><ul><li><code>prefer-ip-address</code>: 默认值为true。不使用主机名来定义注册中心的地址，而使用IP地址的形式，如果设置了这个属性，则使用该属性配置的IP，否则自动获取除环路IP外的第一个IP地址。</li><li><code>ip-address</code>: IP地址</li><li><code>hostname</code>: 设置当前实例的主机名称</li><li><code>appname</code>: 服务名，默认取spring.application.name配置值，如果没有则为unknown。</li><li><code>lease-renewal-interval-in-seconds</code>: 默认值为30。定义服务续约任务（心跳）的调用间隔，单位：秒</li><li><code>lease-expiration-duration-in-seconds</code>: 默认为90。定义服务失效的时间，单位：秒</li><li><code>status-page-url-path</code>：默认为<code>/info</code>，状态页面的URL，相对路径，默认使用HTTP访问，如果需要使用HTTPS则需要使用绝对路径配置</li><li><code>status-page-url</code>： 状态页面的URL，绝对路径</li><li><code>health-check-url-path</code>： 默认值为<code>health</code>。健康检查页面的URL，相对路径，默认使用HTTP访问，如果需要使用HTTPS则需要使用绝对路径配置</li><li><code>health-check-url</code>: 健康检查页面的URL，绝对路径</li></ul><h4 id="eureka-server"><a href="#eureka-server" class="headerlink" title="eureka.server"></a>eureka.server</h4><ul><li><code>enbale-self-preservation</code>: 默认值为true。是否开启自我保护，Eureka会统计15分钟内心跳失败的比例，如果低于85%将会触发保护机制，不剔除服务提供者，如果关闭，注册中心将不可用的实例剔除。</li><li><code>eviction-interval-timer-in-ms</code>: 默认为60。server清理无效节点的时间间隔。</li><li><code>dashboard.enabled</code>: 默认为true，是否开启仪表盘</li><li><code>dashboard.path</code>: 默认为<code>/</code>，仪表盘访问路径</li></ul><h4 id="eureka-client"><a href="#eureka-client" class="headerlink" title="eureka.client"></a>eureka.client</h4><ul><li><code>enabled</code>: 默认为true，是否开启client。</li><li><code>service-url</code>: </li></ul><p>指定服务注册中心的地址，类型为HashMap，并设置有一组默认值，默认的key为defaultZone；默认的Value为<code>http://localhost:8761/eureka</code>，如果服务注册中心为高可用集群时，多个注册中心地址以逗号分隔。</p><p>如果服务注册中心加了安全验证，这里配置的地址格式为：<code>http://&lt;username&gt;:&lt;password&gt;@localhost:8761/eureka</code>，其中<username>是用户名，<password>是用户密码。</p><ul><li><code>fetch-registery</code>: 默认值为true。是否检索服务。 </li><li><code>registery-fetch-interval-seconds</code>: 默认为30。从Eureka服务器端获取注册信息的间隔时间，单位：秒</li><li><code>register-with-eureka</code>: 默认为true。启动服务注册。</li><li><code>eureka-server-connect-timeout-seconds</code>: 默认为5。连接Eureka Server的超时时间，单位：秒。</li><li><code>eureka-server-read-timeout-seconds</code>: 默认为8。读取Eureka Server信息的超时时间，单位：秒。</li><li><code>filter-only-up-instances</code>: 默认为true。获取实例时是否过滤，只保留UP状态的实例。</li><li><code>eureka-connection-idle-timeout-seconds</code>: 默认为30。Eureka服务端连接空闲关闭时间，单位：秒。</li><li><code>eureka-server-total-connections</code>： 默认为200。从Eureka客户端到所有Eureka服务端的连接总数。</li><li><code>eureka-server-total-connections-per-host</code>。默认为50。从Eureka客户端到每个Eureka服务主机的连接总数。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> SpringCloud </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpirngCloud </tag>
+            
+            <tag> Eureka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Shiro使用Redis实现分布式会话与信息缓存</title>
       <link href="/2020/05/14/Shiro%E4%BD%BF%E7%94%A8Redis%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BC%9A%E8%AF%9D%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%BC%93%E5%AD%98/"/>
       <url>/2020/05/14/Shiro%E4%BD%BF%E7%94%A8Redis%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BC%9A%E8%AF%9D%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%BC%93%E5%AD%98/</url>
